@@ -1,0 +1,86 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  overflow: hidden;
+}
+
+.content-area.sidebar-open {
+  margin-left: 0;
+}
+
+.content-area.sidebar-closed {
+  margin-left: -240px;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1e1e1e;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-button.active {
+  color: #3498db;
+}
+
+.nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #3498db;
+  border-radius: 50%;
+}
+
+.nav-button:hover {
+  color: #3498db;
+}
+
+.nav-button span {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .content-area.sidebar-open {
+    margin-left: 0;
+  }
+  
+  .nav-button span {
+    display: none;
+  }
+}

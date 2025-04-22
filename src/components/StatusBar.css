@@ -1,0 +1,80 @@
+.status-bar {
+  height: 32px;
+  background-color: #252525;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.status-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  font-weight: 500;
+}
+
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.status-item.connected {
+  color: #2ecc71;
+}
+
+.status-item.disconnected {
+  color: #e74c3c;
+}
+
+.status-item.battery {
+  color: #f39c12;
+}
+
+.status-label {
+  font-size: 12px;
+}
+
+.status-notifications {
+  display: flex;
+  gap: 8px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(243, 156, 18, 0.2);
+}
+
+@media (max-width: 768px) {
+  .status-label {
+    display: none;
+  }
+  
+  .status-bar-right {
+    gap: 12px;
+  }
+  
+  .status-item {
+    padding: 4px;
+  }
+}
